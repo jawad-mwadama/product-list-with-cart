@@ -1,0 +1,26 @@
+# Dependency Directories
+node_modules/
+
+# Build and Output Directories (adjust if using Webpack/different setup)
+dist/
+build/
+out/
+
+# Configuration Files (often handled by other tools like ESLint or kept manually)
+# You generally want to ignore the config files unless you explicitly want Prettier formatting them.
+# For example, we want Prettier to ignore the Tailwind config which causes issues:
+# prettier.config.cjs 
+# tailwind.config.js 
+# .prettierrc
+
+# Other Tooling
+.vscode/
+
+# Logs
+*.log
+
+# Windows specific
+thumbs.db
+
+# Any files that should remain exactly as is (e.g., vendor libraries)
+vendor/

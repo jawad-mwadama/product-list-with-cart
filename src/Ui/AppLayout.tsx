@@ -1,11 +1,13 @@
 import React from 'react';
 
-import HomePage from './HomePage';
+import HomeText from './HomeText';
+import Menu from '../Features/Menu/Menu';
 
 function AppLayout() {
   return (
-    <div>
-      <HomePage />
+    <div className="p-12">
+      <HomeText />
+      <Menu />
     </div>
   );
 }

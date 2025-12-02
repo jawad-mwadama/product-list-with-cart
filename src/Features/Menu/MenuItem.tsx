@@ -18,7 +18,7 @@ function MenuItem({ dessertData }: MenuItemProps) {
   const { thumbnail, mobile, tablet, desktop } = dessertData.image;
 
   return (
-    <div className="flex flex-col gap-2 p-2 font-redHat">
+    <div className="flex flex-col gap-1 p-1 font-redHat">
       <picture>
         {/* desktop */}
         <source media="(min-width:1024px)" srcSet={desktop} />
@@ -30,7 +30,7 @@ function MenuItem({ dessertData }: MenuItemProps) {
         <img
           src={thumbnail}
           alt={dessertData.name}
-          className="h-auto w-full rounded-lg hover:border-2 hover:border-red"
+          className="rounded-lg hover:border-2 hover:border-red"
         />
       </picture>
 

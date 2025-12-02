@@ -5,10 +5,10 @@ import Menu from '../Features/Menu/Menu';
 
 function AppLayout() {
   return (
-    <div className="">
+    <>
       <HomeText />
       <Menu />
-    </div>
+    </>
   );
 }
 

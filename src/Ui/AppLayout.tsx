@@ -5,7 +5,7 @@ import Menu from '../Features/Menu/Menu';
 
 function AppLayout() {
   return (
-    <div className="p-12">
+    <div className="">
       <HomeText />
       <Menu />
     </div>

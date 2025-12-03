@@ -19,7 +19,7 @@ const menuData: DessertItem[] = data as DessertItem[];
 
 function Menu() {
   return (
-    <div className="grid grid-cols-1 gap-2 p-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
       {menuData.map((dessertData) => (
         <MenuItem key={dessertData.name} dessertData={dessertData} />
       ))}

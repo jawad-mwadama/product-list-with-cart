@@ -4,12 +4,12 @@ import Cart from '../Features/Cart/Cart';
 
 function AppLayout() {
   return (
-    <div className="grid grid-cols-2 gap-4">
-      <div className="px-8 py-8">
+    <div className="grid grid-cols-1 gap-6 px-2 lg:grid-cols-[2fr_1fr] lg:px-0">
+      <div>
         <HomeText />
         <Menu />
       </div>
-      <div className="flex justify-end">
+      <div className="py-6">
         <Cart />
       </div>
     </div>

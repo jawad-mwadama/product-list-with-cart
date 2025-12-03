@@ -5,8 +5,10 @@ import App from './App.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <div className="h-screen max-w-[1440px] bg-rose-50">
-      <App />
+    <div className="min-h-screen bg-rose-100">
+      <div className="max-w-[1440px]">
+        <App />
+      </div>
     </div>
   </StrictMode>
 );

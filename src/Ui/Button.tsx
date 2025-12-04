@@ -13,7 +13,7 @@ function Button({ onClick, type, disabled = false, children }: ButtonProps) {
   const base = 'inline-block rounded-full   ';
   const styles = {
     primary: base + 'text-white font-redHat-50 px-4 py-1 bg-red',
-    secondary: base,
+    secondary: base + 'text-red font-redHat-50 px-4 py-1 bg-rose-50',
   };
 
   return (

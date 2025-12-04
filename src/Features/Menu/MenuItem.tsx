@@ -1,5 +1,7 @@
 /* React import not required with the automatic JSX runtime */
 
+import Button from '../../Ui/Button';
+
 interface MenuItemProps {
   dessertData: {
     image: {
@@ -16,9 +18,12 @@ interface MenuItemProps {
 
 function MenuItem({ dessertData }: MenuItemProps) {
   const { thumbnail, mobile, tablet, desktop } = dessertData.image;
+  const addToCart = () => {
+    alert('i have been clicked');
+  };
 
   return (
-    <div className="font-redHat">
+    <div className="relative font-redHat">
       <picture>
         {/* desktop */}
         <source media="(min-width:1024px)" srcSet={desktop} />
@@ -32,6 +37,9 @@ function MenuItem({ dessertData }: MenuItemProps) {
           alt={dessertData.name}
           className="w-full rounded-lg hover:border-2 hover:border-red"
         />
+        <Button onClick={addToCart} type="secondary">
+          Add to cart
+        </Button>
       </picture>
 
       <p className="text-sm text-stone-400">{dessertData.category}</p>

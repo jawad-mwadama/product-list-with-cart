@@ -1,6 +1,6 @@
 function HomeText() {
   return (
-    <h1 className="py-3 font-redHat text-3xl font-bold text-rose-900">
+    <h1 className="py-2 font-redHat text-3xl font-bold text-rose-900">
       Desserts
     </h1>
   );

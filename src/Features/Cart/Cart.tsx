@@ -1,16 +1,18 @@
+import empty from '/assets/images/illustration-empty-cart.svg';
+
 function Cart() {
   return (
     <>
-      <div className="rounded-lg bg-rose-50 py-3">
-        <h2 className="px-3.5 py-1 text-xl font-bold text-red">
+      {/* <div className="rounded-lg bg-rose-50 py-3"> */}
+      {/* <h2 className="px-3.5 py-1 text-xl font-bold text-red">
           Your Cart (7)
-        </h2>
+        </h2> */}
 
-        {/* divider for all items except the last */}
-        <div className="divide-y divide-gray-200">
-          <div className="flex items-center justify-between px-3.5 py-2">
-            {/* left */}
-            <div className="flex flex-col">
+      {/* divider for all items except the last */}
+      {/* <div className="divide-y divide-gray-200">
+          <div className="flex items-center justify-between px-3.5 py-2"> */}
+      {/* left */}
+      {/* <div className="flex flex-col">
               <span className="py-1 font-semibold text-rose-900">
                 Classic Tiramisu
               </span>
@@ -20,13 +22,13 @@ function Cart() {
                 <span>@ $5.50</span>
                 <span className="font-semibold text-gray-900">$5.50</span>
               </div>
-            </div>
+            </div> */}
 
-            {/* right */}
-            <button className="text-gray-400 hover:text-gray-600">✕</button>
+      {/* right */}
+      {/* <button className="text-gray-400 hover:text-gray-600">✕</button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <EmptyCart />
     </>
@@ -34,6 +36,18 @@ function Cart() {
 }
 
 function EmptyCart() {
-  return <div></div>;
+  return (
+    <div className="rounded-lg bg-rose-50 py-3">
+      <h2 className="px-3.5 py-1 text-xl font-bold text-red">Your Cart (7)</h2>
+
+      <div className="flex flex-col items-center justify-center">
+        <img src={empty} alt="empty cart" className="py-2" />
+
+        <p className="py-2 text-lg font-bold text-rose-500">
+          Your added items will appear here
+        </p>
+      </div>
+    </div>
+  );
 }
 export default Cart;

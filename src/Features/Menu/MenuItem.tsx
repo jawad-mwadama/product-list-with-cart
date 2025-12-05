@@ -23,30 +23,37 @@ function MenuItem({ dessertData }: MenuItemProps) {
   };
 
   return (
-    <div className="relative font-redHat">
-      <picture>
-        {/* desktop */}
-        <source media="(min-width:1024px)" srcSet={desktop} />
-        {/* tablet */}
-        <source media="(min-width: 768px)" srcSet={tablet} />
-        {/* mobile */}
-        <source media="(min-width: 480px)" srcSet={mobile} />
-        {/* fallback */}
-        <img
-          src={thumbnail}
-          alt={dessertData.name}
-          className="w-full rounded-lg hover:border-2 hover:border-red"
-        />
-        <Button onClick={addToCart} type="secondary">
+    <div>
+      <div className="relative font-redHat">
+        <picture>
+          <source media="(min-width:1024px)" srcSet={desktop} />
+
+          <source media="(min-width: 768px)" srcSet={tablet} />
+
+          <source media="(min-width: 480px)" srcSet={mobile} />
+
+          <img
+            src={thumbnail}
+            alt={dessertData.name}
+            className="w-full rounded-lg hover:border-2 hover:border-red"
+          />
+        </picture>
+
+        <Button
+          onClick={addToCart}
+          type="secondary"
+          className="absolute bottom-0 left-1/2 z-20 -translate-x-1/2 translate-y-1/2 font-semibold"
+        >
           Add to cart
         </Button>
-      </picture>
-
-      <p className="text-sm text-stone-400">{dessertData.category}</p>
-      <h2 className="font-semibold text-rose-900">{dessertData.name}</h2>
-      <span className="text-xl font-bold text-red">
-        ${dessertData.price.toFixed(2)}
-      </span>
+      </div>
+      <div className="pt-6">
+        <p className="text-sm text-stone-400">{dessertData.category}</p>
+        <h2 className="font-semibold text-rose-900">{dessertData.name}</h2>
+        <span className="text-xl font-bold text-red">
+          ${dessertData.price.toFixed(2)}
+        </span>
+      </div>
     </div>
   );
 }

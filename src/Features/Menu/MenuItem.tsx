@@ -1,6 +1,7 @@
 /* React import not required with the automatic JSX runtime */
 
 import Button from '../../Ui/Button';
+import cart from '/assets/images/icon-add-to-cart.svg';
 
 interface MenuItemProps {
   dessertData: {
@@ -35,15 +36,16 @@ function MenuItem({ dessertData }: MenuItemProps) {
           <img
             src={thumbnail}
             alt={dessertData.name}
-            className="w-full rounded-lg hover:border-2 hover:border-red"
+            className="w-full rounded-lg border-red transition duration-600 ease-in-out hover:scale-100 hover:border-3 hover:border-red"
           />
         </picture>
 
         <Button
           onClick={addToCart}
           type="secondary"
-          className="absolute bottom-0 left-1/2 z-20 -translate-x-1/2 translate-y-1/2 font-semibold"
+          className="absolute bottom-0 left-1/2 z-20 flex -translate-x-1/2 translate-y-1/2 items-center gap-2 border-2 border-stone-400 font-semibold whitespace-nowrap"
         >
+          <img src={cart} alt="cart" className="h-4 w-4 shrink-0" />
           Add to cart
         </Button>
       </div>

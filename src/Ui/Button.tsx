@@ -17,10 +17,10 @@ function Button({
   children,
   className = '',
 }: ButtonProps) {
-  const base = 'inline-block rounded-full   ';
+  const base = 'rounded-full ';
   const styles = {
-    primary: base + 'text-white font-redHat-50 px-4 py-1 bg-red',
-    secondary: base + 'text-black font-redHat-50 px-4 py-1 bg-rose-50',
+    primary: base + 'text-white font-redHat-50 px-7 py-1.5 bg-red',
+    secondary: base + 'text-black font-redHat-50 px-7 py-1.5 bg-rose-50 ',
   };
 
   const Variant = type ?? 'primary';
@@ -28,6 +28,7 @@ function Button({
   return (
     <button
       onClick={onClick}
+      // className={`${styles[Variant]} ${className}`}
       className={`${styles[Variant]} ${className}`}
       disabled={disabled}
     >

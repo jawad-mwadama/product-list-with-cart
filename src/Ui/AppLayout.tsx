@@ -4,8 +4,8 @@ import Cart from '../Features/Cart/Cart';
 
 function AppLayout() {
   return (
-    <div className="grid grid-cols-1 gap-6 px-2 lg:grid-cols-[2fr_1fr] lg:px-0">
-      <div className="px-9">
+    <div className="grid grid-cols-1 gap-1 lg:grid-cols-[2fr_1fr] lg:px-0">
+      <div className="px-2 lg:px-10">
         <HomeText />
         <Menu />
       </div>

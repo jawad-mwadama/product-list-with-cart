@@ -43,7 +43,7 @@ function MenuItem({ dessertData }: MenuItemProps) {
         <Button
           onClick={addToCart}
           type="secondary"
-          className="absolute bottom-0 left-1/2 z-20 flex -translate-x-1/2 translate-y-1/2 items-center gap-2 border-2 border-stone-400 font-semibold whitespace-nowrap"
+          className="absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-1/2 items-center gap-2 border-2 border-stone-400 font-semibold whitespace-nowrap"
         >
           <img src={cart} alt="cart" className="h-4 w-4 shrink-0" />
           Add to cart

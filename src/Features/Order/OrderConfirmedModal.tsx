@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 interface Modal {
   children: ReactNode;
-  open?: false;
+  open: boolean;
+  onClose: () => void;
 }
 
 function OrderConfirmedModal({ open, children }: Modal) {

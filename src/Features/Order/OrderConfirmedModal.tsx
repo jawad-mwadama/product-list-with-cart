@@ -20,7 +20,7 @@ function OrderConfirmedModal({ open, onClose }: Modal) {
         >
           <img src={X} alt="remove" />
         </button>
-        Order modal
+        Continue tomorrow
       </div>
     </div>
   );

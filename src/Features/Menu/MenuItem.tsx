@@ -18,7 +18,7 @@ interface MenuItemProps {
 }
 
 function MenuItem({ dessertData }: MenuItemProps) {
-  const { thumbnail, mobile, tablet, desktop } = dessertData.image;
+  const { mobile, tablet, desktop } = dessertData.image;
   const addToCart = () => {
     alert('i have been clicked');
   };
@@ -34,7 +34,7 @@ function MenuItem({ dessertData }: MenuItemProps) {
           <source media="(min-width: 480px)" srcSet={mobile} />
 
           <img
-            src={thumbnail}
+            src={mobile}
             alt={dessertData.name}
             className="w-full rounded-lg border-red transition duration-600 ease-in-out hover:scale-100 hover:border-3 hover:border-red"
           />

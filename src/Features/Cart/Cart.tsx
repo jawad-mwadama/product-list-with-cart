@@ -43,8 +43,8 @@ function Cart() {
         </div>
 
         {/* carbon */}
-        <div className="mx-2.5 flex items-center justify-center gap-2 rounded-lg bg-rose-300/40 px-5 py-2 sm:mx-4">
-          <img src={Carbon} alt="tree" />
+        <div className="mx-2.5 flex flex-wrap items-center justify-center gap-2 rounded-lg bg-rose-300/40 px-5 py-2 sm:mx-4">
+          <img src={Carbon} alt="tree" className="h-4 w-4 shrink-0" />
           This is a<span className="font-bold text-black">Carbon neutral</span>
           delivery.
         </div>

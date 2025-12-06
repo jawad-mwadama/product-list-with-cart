@@ -1,4 +1,4 @@
-import empty from '/assets/images/illustration-empty-cart.svg';
+import X from '/assets/images/icon-remove-item.svg';
 
 function Cart() {
   return (
@@ -25,31 +25,23 @@ function Cart() {
             </div>
 
             {/* right */}
-            <button className="text-gray-400 hover:text-gray-600">✕</button>
+            <button className="rounded-full border border-red p-1.5 text-gray-400 hover:text-gray-600">
+              <img src={X} alt="remove" />
+            </button>
           </div>
         </div>
 
-        <div className="flex items-center px-3.5 py-2">
-          continue tomorrow morning
+        {/* order */}
+        <div className="flex items-center justify-between px-3.5 py-2">
+          <div className="flex flex-col">
+            <span className="py-1 font-normal">Order Total</span>
+          </div>
+
+          <span className="text-2xl font-bold text-rose-900">$46.50</span>
         </div>
       </div>
     </>
   );
 }
 
-// function EmptyCart() {
-//   return (
-//     <div className="rounded-lg bg-rose-50 py-3">
-//       <h2 className="px-3.5 py-1 text-xl font-bold text-red">Your Cart (0)</h2>
-
-//       <div className="flex flex-col items-center justify-center">
-//         <img src={empty} alt="empty cart" className="py-2" />
-
-//         <p className="py-2 text-lg font-bold text-rose-500">
-//           Your added items will appear here
-//         </p>
-//       </div>
-//     </div>
-//   );
-// }
 export default Cart;

@@ -1,9 +1,8 @@
 import X from '/assets/images/icon-remove-item.svg';
 import Carbon from '/assets/images/icon-carbon-neutral.svg';
-import Button from '../../Ui/Button';
+import Order from '../Order/Order';
 
 function Cart() {
-  const click = () => alert('order confirmed');
   return (
     <>
       <div className="rounded-lg bg-rose-50 py-3 font-redHat">
@@ -46,15 +45,12 @@ function Cart() {
         {/* carbon */}
         <div className="mx-2.5 flex items-center justify-center gap-2 rounded-lg bg-rose-300/40 px-5 py-2 sm:mx-4">
           <img src={Carbon} alt="tree" />
-          This is a Carbon neutral delivery.
+          This is a<span className="font-bold text-black">Carbon neutral</span>
+          delivery.
         </div>
 
         {/* confrim order */}
-        <div className="mx-2.5 flex items-center justify-center py-4 sm:mx-4">
-          <Button type="primary" onClick={click} className="w-full">
-            Confirm order
-          </Button>
-        </div>
+        <Order />
       </div>
     </>
   );

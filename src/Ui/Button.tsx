@@ -19,7 +19,9 @@ function Button({
 }: ButtonProps) {
   const base = 'rounded-full ';
   const styles = {
-    primary: base + 'text-white font-redHat-50 px-7 py-1.5 bg-red',
+    primary:
+      base +
+      'text-white font-redHat-50 px-7 py-1.5 bg-red cursor-pointer font-medium transition-colors hover:bg-red/85',
     secondary: base + 'text-black font-redHat-50 px-7 py-1.5 bg-rose-50 ',
   };
 

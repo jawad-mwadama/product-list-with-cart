@@ -11,9 +11,7 @@ function Order() {
         Confirm order
       </Button>
 
-      <OrderConfirmedModal open={open} onClose={() => setOpen(false)}>
-        <div className="z-50 mx-auto">Order modal</div>
-      </OrderConfirmedModal>
+      <OrderConfirmedModal open={open} onClose={() => setOpen(false)} />
     </div>
   );
 }

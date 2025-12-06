@@ -27,7 +27,7 @@ function Cart() {
             </div>
 
             {/* right */}
-            <button className="rounded-full border border-red p-1.5 text-gray-400 hover:text-gray-600">
+            <button className="rounded-full border border-red p-1.5">
               <img src={X} alt="remove" />
             </button>
           </div>

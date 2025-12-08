@@ -1,4 +1,5 @@
 import X from '/assets/images/icon-remove-item.svg';
+import confirm from '/assets/images/icon-order-confirmed.svg';
 
 interface Modal {
   open: boolean;
@@ -20,7 +21,11 @@ function OrderConfirmedModal({ open, onClose }: Modal) {
         >
           <img src={X} alt="remove" />
         </button>
-        Order now
+        <span>
+          <img src={confirm} alt="order-confirmed" />
+        </span>
+        <h2>Order now</h2>
+        <p>We hope you enjoy your food!</p>
       </div>
     </div>
   );

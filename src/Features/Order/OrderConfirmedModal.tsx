@@ -1,6 +1,7 @@
 import X from '/assets/images/icon-remove-item.svg';
 import confirm from '/assets/images/icon-order-confirmed.svg';
 import tiramisuThumbnail from '/assets/images/image-tiramisu-thumbnail.jpg';
+import Order from './Order';
 
 interface Modal {
   open: boolean;
@@ -26,13 +27,15 @@ function OrderConfirmedModal({ open, onClose }: Modal) {
         <span>
           <img src={confirm} alt="order-confirmed" className="h-9 w-9" />
         </span>
-        <h2 className="py-2 text-2xl font-bold text-rose-900">Order now</h2>
-        <p className="pb-2">We hope you enjoy your food!</p>
+        <h2 className="flex-wrap py-2 text-2xl font-bold text-rose-900 sm:flex">
+          Order Confirmed
+        </h2>
+        <p className="pb-2 text-rose-300">We hope you enjoy your food!</p>
 
         {/* order section */}
 
-        <div className="divide-y divide-gray-200 rounded-lg bg-rose-100 p-1.5">
-          <div className="flex items-center justify-between">
+        <div className="divide-y divide-gray-200 rounded-lg bg-rose-100 p-1.5 py-2">
+          <div className="flex items-center justify-between pt-2">
             {/* left group */}
             <div className="flex items-center gap-3">
               <img src={tiramisuThumbnail} className="h-12 w-12 rounded-md" />
@@ -51,6 +54,18 @@ function OrderConfirmedModal({ open, onClose }: Modal) {
             <span className="font-semibold text-gray-900">$5.50</span>
           </div>
         </div>
+
+        {/* order */}
+        <div className="flex items-center justify-between pt-2">
+          <div className="flex flex-col">
+            <span className="py-1 font-normal">Order Total</span>
+          </div>
+
+          <span className="text-2xl font-bold text-rose-900">$46.50</span>
+        </div>
+
+        {/* order button */}
+        <Order onConfirm={() => {}} />
       </div>
     </div>
   );

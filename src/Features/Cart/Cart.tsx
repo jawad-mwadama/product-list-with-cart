@@ -1,8 +1,13 @@
+import { useState } from 'react';
+
 import X from '/assets/images/icon-remove-item.svg';
 import Carbon from '/assets/images/icon-carbon-neutral.svg';
+
+import OrderConfirmedModal from '../Order/OrderConfirmedModal';
 import Order from '../Order/Order';
 
 function Cart() {
+  const [open, setOpen] = useState(false);
   return (
     <>
       <div className="rounded-lg bg-rose-50 py-3 font-redHat">
@@ -49,8 +54,11 @@ function Cart() {
           delivery.
         </div>
 
-        {/* confrim order */}
-        <Order />
+        {/* confrim order and order modal */}
+        <>
+          <Order onConfirm={() => setOpen(true)} />
+          <OrderConfirmedModal open={open} onClose={() => setOpen(false)} />
+        </>
       </div>
     </>
   );

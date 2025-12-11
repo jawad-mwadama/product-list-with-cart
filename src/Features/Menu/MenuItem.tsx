@@ -1,5 +1,6 @@
 /* React import not required with the automatic JSX runtime */
 
+// import { useState } from 'react';
 import Button from '../../Ui/Button';
 import cart from '/assets/images/icon-add-to-cart.svg';
 
@@ -18,6 +19,8 @@ interface MenuItemProps {
 }
 
 function MenuItem({ dessertData }: MenuItemProps) {
+  // const [count, setCount] = useState();
+
   const { mobile, tablet, desktop } = dessertData.image;
   const addToCart = () => {
     alert('i have been clicked');

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import OrderSlice from './Features/Order/OrderSlice';
+import CartSlice from './Features/Cart/CartSlice';
 
 export const store = configureStore({
-  reducer: { order: OrderSlice },
+  reducer: { cart: CartSlice },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

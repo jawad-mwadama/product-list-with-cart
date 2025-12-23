@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 // 1) Interface for image details
-interface ImageDetails {
+export interface ImageDetails {
   thumbnail: string;
   mobile: string;
   desktop: string;
@@ -9,7 +9,7 @@ interface ImageDetails {
 }
 
 // 2) Interface for single dessert item
-interface DessertItem {
+export interface DessertItem {
   image: ImageDetails;
   name: string;
   category: string;
@@ -17,7 +17,7 @@ interface DessertItem {
 }
 
 // 3) Interface for item in cart
-interface CartItem extends DessertItem {
+export interface CartItem extends DessertItem {
   quantity: number;
 }
 
@@ -58,8 +58,35 @@ const cartSlice = createSlice({
     },
 
     // action.payload will be name(string) of item to increase
-    // increaseQuantity(state, action) {},
+    increaseQuantity(state, action: PayloadAction<string>) {
+      // find cartItem based on it's 'name' property
+      const item = state.cart.find((item) => item.name === action.payload);
+
+      // using immer to mutate quantity
+      if (item) {
+        item.quantity++;
+      }
+    },
+
+    // reducer to complete functionality
+    decreaseQuantity(state, action: PayloadAction<string>) {
+      const itemIndex = state.cart.findIndex(
+        (item) => item.name === action.payload
+      );
+
+      if (itemIndex > -1) {
+        const item = state.cart[itemIndex];
+        item.quantity--;
+
+        // if item drops to 0 remove item completely
+        if (item.quantity === 0) {
+          state.cart.splice(itemIndex, 1);
+        }
+      }
+    },
   },
 });
 
-export const { addItem } = cartSlice.actions;
+export const { addItem, deleteItem, increaseQuantity, decreaseQuantity } =
+  cartSlice.actions;
+export default cartSlice.reducer;

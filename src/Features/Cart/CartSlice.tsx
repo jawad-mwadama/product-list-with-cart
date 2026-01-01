@@ -22,7 +22,7 @@ export interface CartItem extends DessertItem {
 }
 
 // 4) Interface for overall slice state
-interface CartState {
+export interface CartState {
   cart: CartItem[];
 }
 const initialState: CartState = {

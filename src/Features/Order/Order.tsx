@@ -7,7 +7,7 @@ function Order({ onConfirm }: orderProps) {
   return (
     <div className="mx-2.5 flex items-center justify-center py-4 sm:mx-4">
       <Button type="primary" onClick={onConfirm} className="w-full">
-        Confirm order
+        Start New Order
       </Button>
     </div>
   );

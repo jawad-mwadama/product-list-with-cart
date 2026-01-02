@@ -1,6 +1,12 @@
 /* React import not required with the automatic JSX runtime */
 
+import { useSelector } from 'react-redux';
 import QuantityCounter from '../../Ui/QuantityCounter';
+import type { CartState } from '../Cart/CartSlice';
+
+interface RootState {
+  cart: CartState;
+}
 
 interface MenuItemProps {
   dessertData: {
@@ -19,6 +25,18 @@ interface MenuItemProps {
 function MenuItem({ dessertData }: MenuItemProps) {
   const { mobile, tablet, desktop } = dessertData.image;
 
+  const itemIsInCart = useSelector((state: RootState) => {
+    return state.cart.cart.some((item) => item.name === dessertData.name);
+  });
+
+  const focusClass = itemIsInCart ? ' border-3 border-red' : '';
+
+  const imageClasses = `
+    w-full rounded-lg 
+    transition duration-600 ease-in-out border-red
+    hover:scale-100 hover:border-3 hover:border-red 
+    ${focusClass}
+  `;
   return (
     <div>
       <div className="relative font-redHat">
@@ -29,11 +47,7 @@ function MenuItem({ dessertData }: MenuItemProps) {
 
           <source media="(min-width: 480px)" srcSet={mobile} />
 
-          <img
-            src={mobile}
-            alt={dessertData.name}
-            className="w-full rounded-lg border-red transition duration-600 ease-in-out hover:scale-100 hover:border-3 hover:border-red"
-          />
+          <img src={mobile} alt={dessertData.name} className={imageClasses} />
         </picture>
 
         <QuantityCounter dessert={dessertData} />

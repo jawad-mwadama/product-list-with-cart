@@ -89,7 +89,7 @@ function OrderConfirmationModal({ open, onClose }: Modal) {
 
         {/* Order Button (Start New Order) */}
         <div className="pt-4">
-          <Order onConfirm={handleStartShopping} />
+          <Order onConfirm={handleStartShopping} buttonText="Start New Order" />
         </div>
       </div>
     </div>
